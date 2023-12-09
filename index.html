@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="container">
+        <div class="form">
+            <h3>Previsão do Tempo:</h3>
+            <div class="form-input-container">
+                <input type="text" id="city-input" placeholder="Busque por uma cidade">
+                <button id="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+        <div id="weather-data" class="hide">
+            <h2>
+                <i class="fa-solid fa-location-dot"></i>
+                <span id="city"></span>
+                <img src="" alt="" id="country"/>
+            </h2>
+          <p id="temperature"><span></span>&deg;C</p>
+          <div id="description-container">
+            <p id="description"></p>
+            <img src="" alt="Condições do tempo" id="weather-icon">
+          </div>
+          <div id="details-container">
+            <p id="humidity">
+                <i class="fa-solid fa-droplet"></i>
+                <span></span>
+            </p>
+            <p id="wind">
+                <i class="fa-solid fa-wind"></i>
+                <span></span>
+            </p>
+          </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
