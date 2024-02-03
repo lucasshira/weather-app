@@ -51,9 +51,5 @@ To run the application locally, follow these steps:
 
 3. Open the `index.html` file in your preferred web browser.
 
-## Demo
-
-Check out the live demo [here](https://lucasshira.github.io/weather-app).
-
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
