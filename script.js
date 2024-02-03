@@ -1,5 +1,7 @@
-const apiKey = "55b05574caec81b29eaaff5562b7c100";
-const accessKey = "WC_OeqF4OlVD16mM9EqtZduIjg_KT7sOoXAzbpDGeo0";
+window.onload = function() {
+    if (window.config) {
+      const apiKey = window.config.apiKey;
+      const accessKey = window.config.accessKey;
 
 const cityInput = document.querySelector('#city-input');
 const searchBtn = document.querySelector('#search');
@@ -57,3 +59,7 @@ cityInput.addEventListener('keyup', (e) => {
         setBackground(city); 
     }
 });
+} else {
+    console.error('A configuração não foi carregada corretamente.');
+  }
+};
