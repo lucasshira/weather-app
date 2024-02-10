@@ -1,5 +1,3 @@
-const API_URL = '__API_URL__';
-
 const cityInput = document.querySelector('#city-input');
 const searchBtn = document.querySelector('#search');
 
@@ -14,7 +12,7 @@ const weatherContainer = document.querySelector('#weather-data');
 
 const getWeatherData = async (city) => {
     try {
-        const response = await fetch(API_URL, {
+        const response = await fetch('http://localhost:3000/weather', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,11 +32,13 @@ const showWeatherData = async (city) => {
     try {
         const data = await getWeatherData(city);
 
+        // Verifique se há um erro antes de retornar os dados
         if (data.error) {
             console.error('Error fetching weather data:', data.error);
             return { error: data.error };
         }
 
+        // Atualize o DOM com os dados
         cityElement.innerText = data.name;
         tempElement.innerHTML = parseInt(data.main.temp);
         descElement.innerHTML = data.weather[0].description;
@@ -47,6 +47,7 @@ const showWeatherData = async (city) => {
         windElement.innerHTML = `${data.wind.speed}km/h`;
         weatherContainer.classList.remove("hide");
 
+        // Retorne os dados, incluindo a URL da imagem
         return {
             name: data.name,
             temp: parseInt(data.main.temp),
@@ -54,7 +55,7 @@ const showWeatherData = async (city) => {
             icon: data.weather[0].icon,
             humidity: `${data.main.humidity}%`,
             windSpeed: `${data.wind.speed}km/h`,
-            imageUrl: data.imageUrl,
+            imageUrl: data.imageUrl,  // A URL da imagem diretamente em 'data'
         };
     } catch (error) {
         console.error(error);
@@ -77,6 +78,7 @@ searchBtn.addEventListener('click', async (e) => {
     try {
         const data = await showWeatherData(city);
 
+        // Chame a função correta para mostrar os dados climáticos
         if (!data.error) {
             setBackground(data.imageUrl);
         }
