@@ -1,8 +1,8 @@
+// server.mjs
 dotenv.config();
 import express from 'express';
 import fetch from 'node-fetch';
 import cors from 'cors';
-import path from 'path';
 import dotenv from 'dotenv';
 
 const app = express();
@@ -10,8 +10,6 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     res.send('Bem-vindo à API de previsão do tempo.');
@@ -46,7 +44,7 @@ app.post('/weather', async (req, res) => {
     }
 });
 
-// app.use('/weather', express.static('public'));
+app.use('/weather', express.static('public'));
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
