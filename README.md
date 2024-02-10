@@ -18,6 +18,7 @@ Welcome to the Weather App, a simple and responsive application developed in Jav
 ## Technologies Used
 
 - **JavaScript (ES6):** The application is developed using JavaScript Vanilla, leveraging the latest ECMAScript features for a clean and modern codebase.
+- **Node.js and Express.js:** The server-side scripting is powered by Node.js, with the Express.js framework providing a scalable and efficient backend.
 
 ## APIs Used
 
@@ -27,11 +28,6 @@ Welcome to the Weather App, a simple and responsive application developed in Jav
 2. **Unsplash API:**
    - Retrieves high-quality images of the searched city to enhance the visual appeal of the app.
 
-## How to Use
-
-1. Enter the desired city in the search bar.
-2. Click the "Search" button or press "Enter" to fetch weather data and update the background with an image of the city.
-3. Explore the temperature, sky conditions, wind speed, and humidity for the specified location.
 
 ## Setup
 
@@ -49,11 +45,24 @@ To run the application locally, follow these steps:
     cd weather-app
     ```
 
-3. Open the `index.html` file in your preferred web browser.
+3. Install Dependencies:
+   Run the following command to install project dependencies.
+   ```bash
+   npm install
+   ```
 
-## Demo
+4. Start the Server:
 
-Check out the live demo [here](https://lucasshira.github.io/weather-app).
+    Run the following command to start the server:
+
+    ```bash
+    npm start
+    ```
+
+5. Open the App in a Browser:
+
+    Open your web browser and go to [http://localhost:3000](http://localhost:3000) to view the application.
+   
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
