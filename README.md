@@ -61,7 +61,7 @@ To run the application locally, follow these steps:
 
 5. Open the App in a Browser:
 
-    Open your web browser and go to [http://localhost:3000](http://localhost:3000) to view the application.
+    Open your web browser and go to [http://localhost:3000/weather](http://localhost:3000) to view the application.
    
 
 ## License
